@@ -1,3 +1,10 @@
-<h1>This is my exoplanet webpage</h1>
+{% extends 'base.html' %}
 
-<p>We have {{no_exoplanets}} exoplanets in the database</p>
+{% block main %}
+  <h1>This is my exoplanet webpage</h1>
+
+  {% if no_exoplanets %}
+  <p>We have {{no_exoplanets}} exoplanets in the database</p>
+  {% else %}
+  <p>No exoplanets have been found yet. We live in 1991.</p>
+{% endblock %}
