@@ -8,6 +8,10 @@ def home(request):
     no_exoplanets = Planet.objects.all().count()
     return render(request,'exoplanets/index.html',{'no_exoplanets': no_exoplanets})
 
+def missionlist(request, mission):
+    planets = Planet.objects.filter(misson__name__istartswith=mission)
+    return render(request,'exoplanets/planets.html',{'planets':planets})
+
 def planets(request):
     planets = Planet.objects.all()
     return render(request,'exoplanets/planets.html',{'planets':planets})
