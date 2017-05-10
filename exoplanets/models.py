@@ -6,7 +6,7 @@ class Mission(models.Model):
     start_date = models.DateTimeField('date discovered')
 
     def __unicode__(self):
-    	return self.name
+        return self.name
 
 class Planet(models.Model):
     name = models.CharField(max_length=200)
@@ -16,5 +16,4 @@ class Planet(models.Model):
     misson = models.ForeignKey(Mission)
 
     def __unicode__(self):
-    	return self.name
-
+        return self.name
